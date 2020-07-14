@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<title>CICSC大会安全可视化系统</title>
+	<link type='text/css' rel="styleSheet" href='map.css'>
+	<script src="https://cdn.bootcss.com/echarts/4.4.0-rc.1/echarts-en.common.js"></script>
+	<script src="echarts-gl.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<canvas id="floor1fg"></canvas>
+		<canvas id="floor1bg"></canvas>
+		<div class='top'>
+			<canvas id="time"></canvas>
+			<canvas id="legend"></canvas>
+			<div class='btn day1' id='1' onclick="start(this.id)">1</div>
+			<div class='btn day2' id='2' onclick="start(this.id)">2</div>
+			<div class='btn day3' id='3' onclick="start(this.id)">3</div>
+			<div id="button2" class='btn stroke left' onclick="pause()">暂停/继续</div>
+		</div>
+		<div class='center'>
+			<img src='img//1.png' width='120' height='25'>
+			<div class="list" id="id_list"></div>
+		</div>
+		<canvas id="floor2fg"></canvas>
+		<canvas id="floor2bg"></canvas>
+		<div></div>
+		<div class='middle'>
+			<img src='img//2.png' width='225' height='50'>
+			<div id="main" style="width: 635px;height: 380px;"></div>
+		</div>
+		<div class='left_travel'>
+			<img src='img//fly(1).png' width='300' height='50'>
+			<div id="floor1_travel" style="width: 640px;height: 380px;"></div>
+		</div>
+		<div class='right_travel'>
+			<img src='img//fly(2).png' width='300' height='50'>
+			<div id="floor2_travel" style="width: 640px;height: 380px;"></div>
+		</div>
+	</body>
+	<script src="map.js"></script>
+</html>

@@ -1,0 +1,270 @@
+html{
+	box-sizing: border-box;
+  	font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+#floor1fg,#floor2fg,#floor1bg,#floor2bg{
+	display: block;
+	cursor: pointer;
+	box-shadow: 0px 5px 5px rgba(0,0,0,0.5);
+}
+#floor1fg{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 0;
+}
+#floor1bg{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: 1;
+}
+#time{
+	position: absolute;
+	top: 0px;
+}
+#legend{
+	position: absolute;
+	top:80px;
+}
+#floor2fg{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	z-index: 0;
+}
+#floor2bg{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	z-index: 1;
+}
+.btn{
+  position: absolute;
+  background-color: #e74c3c;
+  top: 60px;
+  font-size: 15px;
+  color: #fff;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+/*.btn.left:after {
+  left: 0;
+}*/
+.btn.stroke:after {
+  content: "";
+  background: #fff;
+  display: block;
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  top: 0;
+  opacity: 0;
+  transition: all 0.75s ease-in-out;
+}
+.btn.stroke:active:after {
+  width: 0px;
+  opacity: 1;
+  transition: 0s;
+}
+#button2{
+	background-color: #e74c3c;
+	width: 83.5px;
+	left: 83.5px;
+}
+.day1{
+	background-color: #a5e65a;
+	width: 27.83px;
+}
+.day2{
+	background-color: #3498db;
+	width: 27.83px;
+	left: 27.83px;
+}
+.day3{
+	background-color: #32d9cb;
+	width: 27.83px;
+	left: 55.66px;
+}
+.list{
+	position: absolute;
+	top: 30px;
+	width: 240px;
+	height: 245px;
+	overflow: auto;
+	border  : none;
+	text-align: center;
+	cursor: pointer;
+	list-style-image: none;
+}
+.list::-webkit-scrollbar {
+/*滚动条整体样式*/
+	width : 10px;  /*高宽分别对应横竖滚动条的尺寸*/
+	height: 1px;
+}
+.list::-webkit-scrollbar-thumb {
+/*滚动条里面小方块*/
+	border-radius   : 10px;
+	background-color: skyblue;
+	background-image: -webkit-linear-gradient(
+	45deg,
+	rgba(255, 255, 255, 0.2) 25%,
+	transparent 25%,
+	transparent 50%,
+	rgba(255, 255, 255, 0.2) 50%,
+	rgba(255, 255, 255, 0.2) 75%,
+	transparent 75%,
+	transparent
+	);
+}
+.list::-webkit-scrollbar-track {
+/*滚动条里面轨道*/
+  box-shadow   : inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background   : #ededed;
+  border-radius: 10px;
+}
+div li{
+    list-style: none;
+    font-size: 1.2em;
+    font-family: monospace;
+    /* width: 600px; */
+    line-height: 20px;
+    text-align: center;
+    height: 20px;
+    position: relative;
+    color: rgb(168, 168, 168);
+    transition:color 0.8s, font-size 0.8s,transform 0.8s;
+}
+div li:hover{
+    color: rgb(255, 255, 255);
+    font-size: 1.5em;
+    transform: rotate(-0.5deg);
+}
+div li::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #00ff0d;
+/*    border-radius: 25px;*/
+    z-index: -1;
+    transform: scaleY(0);
+    transition: transform 0.5s;
+    transform-origin: bottom;
+}
+div li:hover::before{
+    transform: scaleY(1);
+    transition: transform 0.5s;
+    transform-origin: top;
+}
+div li::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #00ff0d;
+    /*border-radius: 25px;*/
+    z-index: -2;
+    transform: scaleY(0);
+    transition: transform 0.5s;
+    transform-origin: bottom;
+    filter: blur(40px);
+}
+div li:hover::after{
+    transform: scaleY(1);
+    transition: transform 0.5s;
+    transform-origin: top;
+}
+.middle{
+	text-align: center;
+	position: absolute;
+	left: 642px;
+	bottom: 0;
+	background: linear-gradient(blue, blue) left top,
+        linear-gradient(blue, blue) left top,
+        linear-gradient(blue, blue) right top,
+        linear-gradient(blue, blue) right top,
+        linear-gradient(blue, blue) left bottom,
+        linear-gradient(blue, blue) left bottom,
+        linear-gradient(blue, blue) right bottom,
+        linear-gradient(blue, blue) right bottom;
+    background-repeat: no-repeat;
+    background-size: 2px 24px, 24px 2px;
+}
+.left_travel{
+	text-align: center;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	background: linear-gradient(blue, blue) left top,
+        linear-gradient(blue, blue) left top,
+        linear-gradient(blue, blue) right top,
+        linear-gradient(blue, blue) right top,
+        linear-gradient(blue, blue) left bottom,
+        linear-gradient(blue, blue) left bottom,
+        linear-gradient(blue, blue) right bottom,
+        linear-gradient(blue, blue) right bottom;
+    background-repeat: no-repeat;
+    background-size: 2px 24px, 24px 2px;
+}
+.right_travel{
+	text-align: center;
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+	background: linear-gradient(blue, blue) left top,
+        linear-gradient(blue, blue) left top,
+        linear-gradient(blue, blue) right top,
+        linear-gradient(blue, blue) right top,
+        linear-gradient(blue, blue) left bottom,
+        linear-gradient(blue, blue) left bottom,
+        linear-gradient(blue, blue) right bottom,
+        linear-gradient(blue, blue) right bottom;
+    background-repeat: no-repeat;
+    background-size: 2px 24px, 24px 2px;
+}
+.top{
+	position: absolute;
+	top: 0;
+	left: 837.1875px;
+	width: 245px;
+	height: 148px;
+	background: linear-gradient(blue, blue) left top,
+        linear-gradient(blue, blue) left top,
+        linear-gradient(blue, blue) right top,
+        linear-gradient(blue, blue) right top,
+        linear-gradient(blue, blue) left bottom,
+        linear-gradient(blue, blue) left bottom,
+        linear-gradient(blue, blue) right bottom,
+        linear-gradient(blue, blue) right bottom;
+    background-repeat: no-repeat;
+    background-size: 2px 24px, 24px 2px;
+}
+.center{
+	text-align: center;
+	position: absolute;
+	top: 150px;
+	left: 837.1875px;
+	height: 295px;
+	width: 245px;
+	background: linear-gradient(blue, blue) left top,
+        linear-gradient(blue, blue) left top,
+        linear-gradient(blue, blue) right top,
+        linear-gradient(blue, blue) right top,
+        linear-gradient(blue, blue) left bottom,
+        linear-gradient(blue, blue) left bottom,
+        linear-gradient(blue, blue) right bottom,
+        linear-gradient(blue, blue) right bottom;
+    background-repeat: no-repeat;
+    background-size: 2px 24px, 24px 2px;
+}
